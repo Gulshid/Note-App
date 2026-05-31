@@ -1,3 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Note App</string>
+    <string name="app_name">Notes</string>
+    <string name="title_home">My Notes</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_content">Start writing…</string>
+    <string name="action_new_note">New Note</string>
+    <string name="action_save">Save</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_pin">Pin</string>
+    <string name="action_share">Share</string>
+    <string name="action_search">Search</string>
+    <string name="action_sort">Sort</string>
+    <string name="empty_notes_title">No notes yet</string>
+    <string name="empty_notes_subtitle">Tap the + button to create your first note</string>
+    <string name="delete_confirm_title">Delete Note</string>
+    <string name="delete_confirm_message">This note will be permanently deleted.</string>
+    <string name="note_deleted">Note deleted</string>
+    <string name="note_saved">Note saved</string>
+    <string name="undo">Undo</string>
+    <string name="sort_newest">Newest first</string>
+    <string name="sort_oldest">Oldest first</string>
+    <string name="sort_title_asc">Title A–Z</string>
+    <string name="sort_title_desc">Title Z–A</string>
+    <string name="label_note_color">Note Color</string>
+    <string name="label_priority">Priority</string>
+    <string name="label_label">Label</string>
+    <string name="hint_label">e.g. Work, Personal, Ideas…</string>
 </resources>
