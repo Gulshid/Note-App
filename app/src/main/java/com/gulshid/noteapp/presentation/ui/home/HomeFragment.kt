@@ -110,7 +110,8 @@ class HomeFragment : Fragment() {
         notesAdapter.updateViewMode(state.viewMode)
 
         // Note count
-        binding.tvNoteCount.text = "${state.notes.size} notes"
+        binding.tvNoteCount.text = "ALL NOTES"
+        try { binding.tvNoteSubCount?.text = "${state.notes.size} NOTES" } catch(e: Exception) {}
 
         // View mode icon
         val viewModeIcon = if (state.viewMode == ViewMode.GRID) R.drawable.ic_list else R.drawable.ic_grid

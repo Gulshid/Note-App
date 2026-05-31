@@ -70,5 +70,8 @@
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
-</resources>
+    <style name="ShapeAppearance.FAB.Pill" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
 
+</resources>

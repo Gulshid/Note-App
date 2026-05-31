@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Brand — warm parchment palette -->
-    <color name="md_theme_light_primary">#2D2A26</color>
+    <!-- Brand — warm parchment palette (matches screenshot) -->
+    <color name="md_theme_light_primary">#1E1C1A</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
-    <color name="md_theme_light_primaryContainer">#F0EDE6</color>
+    <color name="md_theme_light_primaryContainer">#F0EDE8</color>
     <color name="md_theme_light_onPrimaryContainer">#1A1814</color>
     <color name="md_theme_light_secondary">#C17B3C</color>
     <color name="md_theme_light_onSecondary">#FFFFFF</color>
@@ -18,17 +18,18 @@
     <color name="md_theme_light_errorContainer">#F9DEDC</color>
     <color name="md_theme_light_onErrorContainer">#410E0B</color>
     <color name="md_theme_light_outline">#A09D99</color>
-    <color name="md_theme_light_background">#F7F5F0</color>
+    <!-- Main background: warm cream from screenshot -->
+    <color name="md_theme_light_background">#F5F2EE</color>
     <color name="md_theme_light_onBackground">#1A1814</color>
     <color name="md_theme_light_surface">#FFFFFF</color>
     <color name="md_theme_light_onSurface">#1A1814</color>
-    <color name="md_theme_light_surfaceVariant">#F0EDE6</color>
+    <color name="md_theme_light_surfaceVariant">#EDE9E4</color>
     <color name="md_theme_light_onSurfaceVariant">#6B6760</color>
     <color name="md_theme_light_inverseSurface">#2D2A26</color>
     <color name="md_theme_light_inverseOnSurface">#F7F5F0</color>
     <color name="md_theme_light_inversePrimary">#E8E4DE</color>
-    <color name="md_theme_light_surfaceTint">#2D2A26</color>
-    <color name="md_theme_light_outlineVariant">#D4D0CA</color>
+    <color name="md_theme_light_surfaceTint">#1E1C1A</color>
+    <color name="md_theme_light_outlineVariant">#DDD9D4</color>
     <color name="md_theme_light_scrim">#000000</color>
 
     <!-- Dark -->
@@ -62,13 +63,13 @@
     <color name="md_theme_dark_outlineVariant">#444038</color>
     <color name="md_theme_dark_scrim">#000000</color>
 
-    <!-- Note card tints -->
-    <color name="note_color_default">#FFFFFF</color>
-    <color name="note_color_yellow">#FFFBEA</color>
-    <color name="note_color_teal">#E8F6F3</color>
-    <color name="note_color_lavender">#F0EDFF</color>
-    <color name="note_color_peach">#FFF0E8</color>
-    <color name="note_color_sage">#EEF4E8</color>
+    <!-- Note card colors — exact match to screenshot swatches -->
+    <color name="note_color_default">#F5F2EE</color>
+    <color name="note_color_yellow">#F5E6A3</color>   <!-- IDEAS yellow -->
+    <color name="note_color_teal">#B8E8DC</color>     <!-- HEALTH mint -->
+    <color name="note_color_lavender">#DDD0F5</color> <!-- Meeting lavender -->
+    <color name="note_color_peach">#F5D5B8</color>   <!-- Travel peach -->
+    <color name="note_color_sage">#E4D8F5</color>    <!-- Work purple -->
     <color name="note_color_sky">#E8F2FF</color>
     <color name="note_color_rose">#FFF0F2</color>
     <color name="note_color_sand">#F5F0E8</color>
@@ -79,7 +80,7 @@
     <color name="priority_low">#2E7D5A</color>
 
     <!-- Pin accent -->
-    <color name="pin_accent">#C17B3C</color>
+    <color name="pin_accent">#E05252</color>
 
-    <color name="ic_launcher_background">#2D2A26</color>
+    <color name="ic_launcher_background">#1E1C1A</color>
 </resources>

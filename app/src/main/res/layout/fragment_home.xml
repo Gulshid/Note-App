@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/colorBackground">
+    android:background="#F5F2EE">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="0dp"
-        android:background="?android:attr/colorBackground"
+        android:background="#F5F2EE"
         app:liftOnScroll="false">
 
         <!-- Title row -->
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingHorizontal="20dp"
-            android:paddingTop="8dp"
+            android:paddingTop="12dp"
             android:paddingBottom="4dp"
             android:gravity="center_vertical">
 
@@ -31,31 +31,37 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Notes"
-                android:textAppearance="@style/TextAppearance.NotesApp.Title"
-                android:textColor="?attr/colorOnBackground" />
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:letterSpacing="-0.02"
+                android:textColor="#1A1814" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSearch"
                 style="@style/Widget.Material3.Button.IconButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:insetLeft="0dp"
                 android:insetRight="0dp"
+                android:layout_marginEnd="6dp"
                 app:icon="@drawable/ic_search"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                android:layout_marginEnd="4dp" />
+                app:backgroundTint="#DDD9D4"
+                app:iconTint="#1A1814" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnToggleView"
                 style="@style/Widget.Material3.Button.IconButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:insetLeft="0dp"
                 android:insetRight="0dp"
                 app:icon="@drawable/ic_grid"
                 app:iconGravity="textStart"
-                app:iconPadding="0dp" />
+                app:iconPadding="0dp"
+                app:backgroundTint="#DDD9D4"
+                app:iconTint="#1A1814" />
 
         </LinearLayout>
 
@@ -97,7 +103,6 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <!-- Pinned label -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -108,8 +113,9 @@
                     android:gravity="center_vertical">
 
                     <ImageView
-                        android:layout_width="14dp"
-                        android:layout_height="14dp"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginEnd="5dp"
                         android:src="@drawable/ic_pin_filled"
                         app:tint="@color/pin_accent" />
 
@@ -120,7 +126,7 @@
                         android:textSize="11sp"
                         android:textStyle="bold"
                         android:letterSpacing="0.10"
-                        android:textColor="?attr/colorOutline" />
+                        android:textColor="#A09D99" />
 
                 </LinearLayout>
 
@@ -146,11 +152,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingHorizontal="20dp"
                 android:paddingTop="20dp"
-                android:paddingBottom="10dp"
-                android:gravity="center_vertical">
+                android:paddingBottom="10dp">
 
                 <TextView
                     android:id="@+id/tvNoteCount"
@@ -159,8 +164,18 @@
                     android:textSize="11sp"
                     android:textStyle="bold"
                     android:letterSpacing="0.10"
-                    android:textColor="?attr/colorOutline"
-                    tools:text="ALL NOTES  ·  14" />
+                    android:textColor="#A09D99"
+                    tools:text="ALL NOTES" />
+
+                <TextView
+                    android:id="@+id/tvNoteSubCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.08"
+                    android:textColor="#BDBAB6"
+                    android:layout_marginTop="1dp"
+                    tools:text="14 NOTES" />
 
             </LinearLayout>
 
@@ -215,18 +230,20 @@
 
     </androidx.core.widget.NestedScrollView>
 
+    <!-- FAB: matches screenshot's black rounded pill -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fabAddNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="24dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="28dp"
         android:text="New note"
-        android:textSize="14sp"
+        android:textSize="15sp"
+        android:textColor="#FFFFFF"
         app:icon="@drawable/ic_add"
-        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
-        app:backgroundTint="?attr/colorOnBackground"
-        app:iconTint="?android:attr/colorBackground"
-        android:textColor="?android:attr/colorBackground" />
+        app:iconTint="#FFFFFF"
+        app:backgroundTint="#1E1C1A"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.FAB.Pill"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
