@@ -2,116 +2,91 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cardNote"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="4dp"
+    android:layout_marginHorizontal="0dp"
     android:layout_marginVertical="4dp"
-    android:foreground="?attr/selectableItemBackground"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="0dp"
-    app:strokeWidth="0dp">
+    app:cardCornerRadius="18dp"
+    app:cardElevation="1dp"
+    app:strokeWidth="0.5dp"
+    app:strokeColor="?attr/colorOutlineVariant">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="14dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <!-- Priority chip -->
-        <com.google.android.material.chip.Chip
-            android:id="@+id/priorityChip"
+        <!-- Tag chip -->
+        <TextView
+            android:id="@+id/tvLabel"
             android:layout_width="wrap_content"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"
             android:textSize="9sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.12"
+            android:background="@drawable/bg_priority_bar"
             android:visibility="gone"
-            app:chipMinHeight="24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:text="WORK" />
 
         <!-- Title -->
         <TextView
             android:id="@+id/tvTitle"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:ellipsize="end"
             android:maxLines="1"
-            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-            android:textColor="?attr/colorOnSurface"
-            app:layout_constraintEnd_toStartOf="@id/ivPin"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/priorityChip" />
-
-        <!-- Pin icon -->
-        <ImageView
-            android:id="@+id/ivPin"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:alpha="0.5"
-            android:contentDescription="Pin note"
-            android:src="@drawable/ic_pin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvTitle"
-            app:tint="?attr/colorOnSurfaceVariant" />
+            android:ellipsize="end"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnBackground"
+            android:layout_marginBottom="5dp"
+            tools:text="Project Phoenix — Launch Plan" />
 
         <!-- Preview -->
         <TextView
-            android:id="@+id/tvPreview"
-            android:layout_width="0dp"
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:ellipsize="end"
             android:maxLines="2"
-            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:ellipsize="end"
+            android:textSize="13sp"
+            android:lineSpacingMultiplier="1.5"
+            android:fontFamily="sans-serif-light"
             android:textColor="?attr/colorOnSurfaceVariant"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+            android:layout_marginBottom="10dp"
+            tools:text="Phase 1 complete. Phase 2 begins Monday…" />
 
-        <!-- Bottom row: label, date, word count -->
+        <!-- Date + pin row -->
         <LinearLayout
-            android:id="@+id/bottomRow"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvPreview">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/tvLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:textSize="9sp"
-                android:visibility="gone"
-                app:chipMinHeight="24dp" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/tvWordCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
-                android:textColor="?attr/colorOutline" />
+            android:gravity="center_vertical">
 
             <TextView
                 android:id="@+id/tvDate"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
-                android:textColor="?attr/colorOutline" />
+                android:textSize="11sp"
+                android:textColor="?attr/colorOutline"
+                tools:text="2 days ago" />
+
+            <ImageView
+                android:id="@+id/ivPin"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_pin_filled"
+                android:visibility="gone"
+                app:tint="@color/pin_accent"
+                tools:visibility="visible" />
 
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

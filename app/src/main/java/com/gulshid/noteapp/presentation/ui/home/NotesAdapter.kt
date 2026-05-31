@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.gulshid.noteapp.R
 import com.gulshid.noteapp.data.local.entity.Priority
 import com.gulshid.noteapp.databinding.ItemNoteGridBinding
 import com.gulshid.noteapp.databinding.ItemNoteListBinding
@@ -60,16 +59,9 @@ class NotesAdapter(
         fun bind(note: Note) {
             binding.apply {
                 tvTitle.text = note.title
-                tvPreview.text = note.preview
+                tvContent.text = note.preview
                 tvDate.text = DateUtils.formatDate(note.updatedAt)
-                cardNote.setCardBackgroundColor(NoteColorUtils.getColor(root.context, note.color))
-                ivPin.isActivated = note.isPinned
-
-                priorityIndicator.visibility = if (note.priority != Priority.NONE)
-                    android.view.View.VISIBLE else android.view.View.GONE
-                priorityIndicator.setBackgroundColor(
-                    NoteColorUtils.getPriorityColor(root.context, note.priority)
-                )
+                root.setCardBackgroundColor(NoteColorUtils.getColor(root.context, note.color))
 
                 if (note.label.isNotBlank()) {
                     tvLabel.visibility = android.view.View.VISIBLE
@@ -80,7 +72,6 @@ class NotesAdapter(
 
                 root.setOnClickListener { onNoteClick(note) }
                 root.setOnLongClickListener { onNoteLongClick(note); true }
-                ivPin.setOnClickListener { onPinClick(note) }
             }
         }
     }
@@ -92,17 +83,12 @@ class NotesAdapter(
         fun bind(note: Note) {
             binding.apply {
                 tvTitle.text = note.title
-                tvPreview.text = note.preview
+                tvContent.text = note.preview
                 tvDate.text = DateUtils.formatDate(note.updatedAt)
-                tvWordCount.text = "${note.wordCount} words"
-                cardNote.setCardBackgroundColor(NoteColorUtils.getColor(root.context, note.color))
-                ivPin.isActivated = note.isPinned
+                root.setCardBackgroundColor(NoteColorUtils.getColor(root.context, note.color))
 
-                priorityChip.visibility = if (note.priority != Priority.NONE)
+                ivPin.visibility = if (note.isPinned)
                     android.view.View.VISIBLE else android.view.View.GONE
-                if (note.priority != Priority.NONE) {
-                    priorityChip.text = note.priority.name
-                }
 
                 if (note.label.isNotBlank()) {
                     tvLabel.visibility = android.view.View.VISIBLE

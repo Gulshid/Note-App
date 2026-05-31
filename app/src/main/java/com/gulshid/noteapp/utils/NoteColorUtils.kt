@@ -9,14 +9,14 @@ object NoteColorUtils {
 
     private val colorResIds = listOf(
         R.color.note_color_default,
-        R.color.note_color_red,
-        R.color.note_color_orange,
+        R.color.note_color_rose,
+        R.color.note_color_peach,
         R.color.note_color_yellow,
-        R.color.note_color_green,
+        R.color.note_color_sage,
         R.color.note_color_teal,
-        R.color.note_color_blue,
-        R.color.note_color_purple,
-        R.color.note_color_pink
+        R.color.note_color_sky,
+        R.color.note_color_lavender,
+        R.color.note_color_sand
     )
 
     fun getNoteColors(context: Context): List<Int> =

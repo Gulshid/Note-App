@@ -10,7 +10,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -66,22 +65,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupToolbar() {
-        binding.toolbar.setOnMenuItemClickListener { item ->
-            when (item.itemId) {
-                R.id.action_search -> {
-                    viewModel.toggleSearch()
-                    true
-                }
-                R.id.action_view_mode -> {
-                    viewModel.toggleViewMode()
-                    true
-                }
-                R.id.action_sort -> {
-                    showSortDialog()
-                    true
-                }
-                else -> false
-            }
+        binding.btnSearch.setOnClickListener {
+            viewModel.toggleSearch()
+        }
+        binding.btnToggleView.setOnClickListener {
+            viewModel.toggleViewMode()
         }
     }
 
@@ -126,7 +114,7 @@ class HomeFragment : Fragment() {
 
         // View mode icon
         val viewModeIcon = if (state.viewMode == ViewMode.GRID) R.drawable.ic_list else R.drawable.ic_grid
-        binding.toolbar.menu.findItem(R.id.action_view_mode)?.setIcon(viewModeIcon)
+        binding.btnToggleView.icon = resources.getDrawable(viewModeIcon, requireContext().theme)
 
         // Layout manager
         val layoutManager = if (state.viewMode == ViewMode.GRID) {
@@ -152,7 +140,8 @@ class HomeFragment : Fragment() {
     private fun showNoteOptionsDialog(note: Note) {
         val options = arrayOf(
             if (note.isPinned) "Unpin note" else "Pin note",
-            "Delete note"
+            "Delete note",
+            "Sort"
         )
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(note.title)
@@ -160,6 +149,7 @@ class HomeFragment : Fragment() {
                 when (which) {
                     0 -> viewModel.togglePin(note)
                     1 -> showDeleteConfirmation(note)
+                    2 -> showSortDialog()
                 }
             }
             .show()
